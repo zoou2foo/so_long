@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:35:51 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/25 14:20:30 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/25 16:06:41 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_data
     int     line_length;
     int     endian;
 }   t_data;
+
 
 void    my_mlx_pixel_put(t_data *data, int x, int y, int colour)
 {
@@ -41,6 +42,9 @@ int main()
     img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
         &img.endian);
     my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
-    mlx_put_image_to_window(mlx, mlx_win, img.img, 10, 10);
+    mlx_put_image_to_window(mlx, mlx_win, img.img, 250, 250);
+    mlx_put_image_to_window(mlx, mlx_win, img.img, 250, 251);
+    mlx_put_image_to_window(mlx, mlx_win, img.img, 250, 252);
+    mlx_put_image_to_window(mlx, mlx_win, img.img, 250, 253);
     mlx_loop(mlx);
 }
