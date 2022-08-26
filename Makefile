@@ -6,13 +6,13 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 09:33:47 by vjean             #+#    #+#              #
-#    Updated: 2022/08/23 11:28:15 by vjean            ###   ########.fr        #
+#    Updated: 2022/08/26 16:06:58 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRCS = error_check.c check_elements.c \
+SRCS = error_check.c check_map1.c deal_mlx.c so_long.c \
 # nom des fichiers sources
 
 LIBFT = libft/libft.a
@@ -22,6 +22,8 @@ OBJS = $(SRCS:.c=.o)
 CC = gcc #le compilateur à utiliser
 
 CFLAGS = -g -Wall -Wextra -Werror
+
+MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 .c.o:
 	$(CC)$(CFLAGS) -Imlx -c $< -o $(<:.c=.o)
@@ -36,13 +38,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) 
 	cd libft && make
-	$(CC) $(OBJS) $(LIBFT) -o $(NAME)
-#-Lmlx -lmlx -framework OpenGL -framework AppKit <-to add later
-#$(NAME): $(OBJS) $(GNL_OBJS)
-#    @make -C $(LIBFT_PATH)
-#    $(CC) $(CFLAGS) $(GNL_OBJS) $(OBJS) $(MLX_FLAGS) $(LIBFT_PATH)/libft.a -o $(NAME)
-#(NAME) va à la fin pour avoir l'exécutable so_long et non pas a.out
-#MLX_FLAGS = -lmlx -framework OpenGL -framework AppKit
+	$(CC) $(OBJS) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)

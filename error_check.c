@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 08:31:32 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/25 13:21:10 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/26 16:06:22 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,84 +59,5 @@ int	move_map_to_tab(t_elem *init_map)
 	}
 	return (1);
 }
-
-int	validation_top_and_bottom(t_elem *init_map)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < ft_strlen(init_map->map[0]) - 1)
-	{
-		if (init_map->map[0][i] != '1')
-		{
-			printf("Error:\n map invalid (top)\n");
-			return (0);
-		}
-		i++;
-	}
-	i = 0;
-	printf("Valeur de x: %d\n", init_map->x);
-	while (i < ft_strlen(init_map->map[init_map->x - 1]))
-	{
-		if (init_map->map[init_map->x - 1][i] != '1')
-		{
-			printf("Error:\n map invalid (bottom)\n");
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
-int	validation_right_and_left(t_elem *init_map)
-{
-	int		j;
-	int		first_line;
-
-	j = 0;
-	while (j < init_map->x - 1)
-	{
-		if (init_map->map[j][0] != '1')
-		{
-			printf("Error:\n map invalid (left)\n");
-			return (0);
-		}
-		j++;
-	}
-	j = 0;
-	first_line = ft_strlen((init_map->map[init_map->x - 1]) - 2);
-	while (j < init_map->x)
-	{
-		if (init_map->map[j][first_line] != '1')
-		{
-			printf("Error:\n map invalid wall(right)\n");
-			return (0);
-		}
-		j++;
-	}
-	return (1);
-}
 //something fucked up in validation of the right wall.. ^
 //All good now! I was missing () to what I was sending to strlen
-
-int	main(int ac, char **av)
-{
-	t_elem	*init_map;
-
-	init_map = malloc(sizeof(t_elem));
-	check_map(av[1], ac);
-	init_map->fd = open(av[1], O_RDONLY);
-	if (init_map->fd < 0)
-		exit (0);
-	size_map(init_map);
-	close(init_map->fd);
-	init_map->fd = open(av[1], O_RDONLY);
-	if (init_map->fd < 0)
-		exit (0);
-	move_map_to_tab(init_map);
-	validation_top_and_bottom(init_map);
-	validation_right_and_left(init_map);
-	check_sets_map(init_map);
-	check_format(init_map);
-	return (0);
-}
