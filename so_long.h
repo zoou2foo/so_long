@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:21:28 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/26 16:25:52 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/29 10:31:26 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ typedef struct s_mlx
 	int		*mlx;
 	int		*win;
 	void	*player;
+	void	*floor;
+	void	*wall;
+	void	*door;
 }	t_mlx;
 /*
 

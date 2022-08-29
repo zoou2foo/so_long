@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:12:37 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/26 16:42:43 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/29 09:04:15 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,20 @@ int	ft_keys(int keycode, t_mlx *game)
 	return (0);
 }
 
-int main(void)
+int	main(void)
 {
 	t_mlx	*game;
 	char	*relative_path;
-	int		img_width;
-	int		img_height;
+	int		img_w;
+	int		img_h;
 
-	img_width = 200;
-	img_height = 150;
-	relative_path = "images/penguin.xpm";
+	//img_width = 64;
+	//img_height = 64;
+	relative_path = "images/ocean.xpm";
 	game = malloc(sizeof(t_mlx));
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx, 640, 480, "so long");
-	game->player = mlx_xpm_file_to_image(game, relative_path, &img_width, &img_height);
+	game->player = mlx_xpm_file_to_image(game, relative_path, &img_w, &img_h);
 	mlx_put_image_to_window(game->mlx, game->win, game->player, 200, 200);
 	mlx_hook(game->win, 2, 0, &ft_keys, game);
 	mlx_loop(game->mlx);
