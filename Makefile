@@ -6,13 +6,13 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 09:33:47 by vjean             #+#    #+#              #
-#    Updated: 2022/08/29 10:46:41 by vjean            ###   ########.fr        #
+#    Updated: 2022/08/30 11:15:15 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRCS = error_check.c check_map1.c deal_mlx.c so_long.c game_init.c \
+SRCS = error_check.c check_map1.c deal_mlx.c so_long.c game_init.c movements.c \
 # nom des fichiers sources
 
 LIBFT = libft/libft.a

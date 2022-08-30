@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 08:31:32 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/26 16:06:22 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/30 11:41:20 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	check_map(char *arg, int ac)
 	return (1);
 }
 
-int	size_map(t_elem *init_map)
+void	size_map(t_elem *init_map)
 {
 	init_map->x = 0;
 	while (get_next_line(init_map->fd) != NULL)
@@ -38,7 +38,6 @@ int	size_map(t_elem *init_map)
 		printf("%d\n", init_map->x);
 		init_map->x++;
 	}
-	return (1);
 }
 
 int	move_map_to_tab(t_elem *init_map)
@@ -61,3 +60,4 @@ int	move_map_to_tab(t_elem *init_map)
 }
 //something fucked up in validation of the right wall.. ^
 //All good now! I was missing () to what I was sending to strlen
+//créer une fonction pour free ou non?

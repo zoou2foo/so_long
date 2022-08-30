@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:31:50 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/26 16:03:30 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/30 08:56:21 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_sets_map(t_elem *init_map)
 		j = 0;
 		while (j < ft_strlen(init_map->map[0]) - 1)
 		{
-			if (ft_strchr("01PEC", init_map->map[i][j]) == NULL)
+			if (ft_strchr("01PECN", init_map->map[i][j]) == NULL)
 			{
 				printf("Error:\n missing important elements on the map");
 				return (0);
