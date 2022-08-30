@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:06:01 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/30 11:05:24 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/30 13:52:41 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	init_mlx(t_elem *init_map)
 	xpm_to_image(init_map);
 	game_put_image(init_map);
 	mlx_hook(init_map->win, 2, 0, &ft_keys, init_map);
-	mlx_hook(init_map->win, 17, 0, &ft_keys, init_map);
+	mlx_hook(init_map->win, 17, 0, ft_exit, init_map);
 	mlx_loop(init_map->mlx);
 }
 //new_window pour la size de la win row * 64 et column * 64

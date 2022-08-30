@@ -6,18 +6,19 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:31:50 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/30 08:56:21 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/30 15:21:31 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_sets_map(t_elem *init_map)
+void	check_sets_map(t_elem *init_map)
 {
 	int		i;
 	size_t	j;
 
 	i = 0;
+	init_map->fish = 0;
 	while (i < init_map->x)
 	{
 		j = 0;
@@ -25,14 +26,22 @@ int	check_sets_map(t_elem *init_map)
 		{
 			if (ft_strchr("01PECN", init_map->map[i][j]) == NULL)
 			{
-				printf("Error:\n missing important elements on the map");
-				return (0);
+				printf("Error:\n unknown elements on the map");
+				exit (0);
+			}
+			if (init_map->map[i][j] == 'C')
+			{
+				init_map->fish += 1;
 			}
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	if (init_map->fish == 0)
+	{
+		printf("Error:\n no collectible");
+		exit (0);
+	}
 }
 
 //parce que le fucking d'ordi ne scanne pas de haut en bas (pour le 2e while ^)
@@ -122,5 +131,7 @@ void	check_all_map(t_elem *init_map)
 	validation_top_and_bottom(init_map);
 	validation_right_and_left(init_map);
 	check_sets_map(init_map);
+	check_player(init_map);
+	check_exit(init_map);
 	check_format(init_map);
 }
