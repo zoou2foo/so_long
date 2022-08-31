@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:02:35 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/31 16:43:29 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/31 19:39:25 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	key_hook(int keycode, t_elem *init_map)
 		exit (1);
 	}
 }
-//add go_right; go_down; go_left with the appropriate keys
+//might need to keep count of the moves here to reuse it to the moves on
+//screen
 
 int	ft_exit(void)
 {
