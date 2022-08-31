@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:31:50 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/30 15:21:31 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/30 19:05:16 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ int	validation_top_and_bottom(t_elem *init_map)
 		i++;
 	}
 	i = 0;
-	printf("Valeur de x: %d\n", init_map->x);
 	while (i < ft_strlen(init_map->map[init_map->x - 1]))
 	{
 		if (init_map->map[init_map->x - 1][i] != '1')
