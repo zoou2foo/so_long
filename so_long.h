@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:21:28 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/30 20:05:47 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/31 16:47:16 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_elem
 }	t_elem;
 
 /*
-//	void			*wall; dans s_elem
+
 */
 
 int		check_map(char *arg, int ac);
@@ -64,7 +64,7 @@ void	key_hook(int keycode, t_elem *init_map);
 int		ft_keys(int keycode, t_elem *init_map);
 void	check_all_map(t_elem *init_map);
 void	init_mlx(t_elem *init_map);
-void	game_put_image(t_elem *init_map);
+void	create_window(t_elem *init_map);
 void	xpm_to_image(t_elem *init_map);
 void	ft_put_image(int index, size_t j, t_elem *init_map);
 void	ft_put_image_two(int index, size_t j, t_elem *init_map);
@@ -72,9 +72,16 @@ void	check_player(t_elem *init_map);
 void	check_exit(t_elem *init_map);
 int		ft_exit(void);
 void	key_moves(int keycode, t_elem *init_map);
-void		go_up(t_elem *init_map);
+void	go_up(t_elem *init_map);
 void	move_player_up(t_elem *init_map, size_t i, int ii);
 void	end_game_winner(t_elem *init_map);
 void	end_game(t_elem *init_map);
+void	go_left(t_elem *init_map);
+void	move_player_left(t_elem *init_map, size_t i, int ii);
+void	go_down(t_elem *init_map);
+void	move_player_down(t_elem *init_map, size_t i, int ii);
+void	go_right(t_elem *init_map);
+void	move_player_right(t_elem *init_map, size_t i, int ii);
+void	put_image_all(t_elem *init_map, int index, size_t j);
 
 #endif

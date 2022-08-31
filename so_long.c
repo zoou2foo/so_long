@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:06:01 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/30 13:52:41 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/31 16:33:55 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	init_mlx(t_elem *init_map)
 	init_map->mlx = mlx_init();
 	init_map->win = mlx_new_window(init_map->mlx,
 			(ft_strlen(init_map->map[0]) - 1) * 64, init_map->x * 64,
-			"so long");
+			"so_long");
 	xpm_to_image(init_map);
-	game_put_image(init_map);
+	create_window(init_map);
 	mlx_hook(init_map->win, 2, 0, &ft_keys, init_map);
 	mlx_hook(init_map->win, 17, 0, ft_exit, init_map);
 	mlx_loop(init_map->mlx);

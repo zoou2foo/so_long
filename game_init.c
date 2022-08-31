@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 09:21:30 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/30 10:37:29 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/31 16:41:48 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,31 +78,38 @@ void	ft_put_image_two(int index, size_t j, t_elem *init_map)
 	}
 }
 
-void	game_put_image(t_elem *init_map)
+void	create_window(t_elem *init_map)
 {
 	int		index;
 	size_t	j;
 
 	index = 0;
+	init_map->col = 0;
 	while (index < init_map->x)
 	{
 		j = 0;
 		init_map->row = 0;
 		while (j < ft_strlen(init_map->map[0]) - 1)
 		{
-			if (init_map->map[index][j] == '1'
-				|| init_map->map[index][j] == '0')
-			{
-				ft_put_image(index, j, init_map);
-			}
-			else
-			{	
-				ft_put_image_two(index, j, init_map);
-			}
+			put_image_all(init_map, index, j);
 			j++;
 			init_map->row += 64;
 		}
 		init_map->col += 64;
 		index++;
+	}
+}
+//peut-être changer pour create_window ^
+
+void	put_image_all(t_elem *init_map, int index, size_t j)
+{
+	if (init_map->map[index][j] == '1'
+		|| init_map->map[index][j] == '0')
+	{
+		ft_put_image(index, j, init_map);
+	}
+	else
+	{	
+		ft_put_image_two(index, j, init_map);
 	}
 }

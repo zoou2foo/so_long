@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deal_mlx.c                                         :+:      :+:    :+:   */
+/*   check_game_basic.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:02:35 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/30 19:41:54 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/31 16:43:29 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,20 @@ void	key_hook(int keycode, t_elem *init_map)
 {
 	if (keycode == 13)
 		go_up(init_map);
+	if (keycode == 0)
+		go_left(init_map);
+	if (keycode == 1)
+		go_down(init_map);
+	if (keycode == 2)
+		go_right(init_map);
 	if (keycode == 53)
 	{
 		mlx_destroy_window(init_map->mlx, init_map->win);
-		printf("Done");
+		printf("WTF! You quit this fucking amazing game!?!");
 		exit (1);
 	}
 }
 //add go_right; go_down; go_left with the appropriate keys
-
 
 int	ft_exit(void)
 {
