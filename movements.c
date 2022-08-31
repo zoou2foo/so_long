@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:11:21 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/30 20:05:11 by vjean            ###   ########.fr       */
+/*   Updated: 2022/08/31 11:23:28 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 //break below to not go through with this function
 void	go_up(t_elem *init_map)
 {
-	size_t i;
-	int ii;
+	size_t	i;
+	int		ii;
 
 	i = 0;
 	while (i < ft_strlen(init_map->map[0]) - 1)
@@ -38,7 +38,7 @@ void	go_up(t_elem *init_map)
 	}
 }
 
-void move_player_up(t_elem *init_map, size_t i, int ii)
+void	move_player_up(t_elem *init_map, size_t i, int ii)
 {
 	if (init_map->map[i - 1][ii] == 'C')
 		init_map->fish--;
@@ -59,14 +59,14 @@ maybe need else if fish = 0 but not sure. Does not make sense either.
 	}
 	return (0); */
 
-void end_game_winner(t_elem *init_map)
+void	end_game_winner(t_elem *init_map)
 {
 	printf("Winner! Gagnant!");
 	mlx_destroy_window(init_map->mlx, init_map->win);
 	exit (0);
 }
 
-void end_game(t_elem *init_map)
+void	end_game(t_elem *init_map)
 {
 	printf("You've been killed by a baby shark! Doo doo doo doo");
 	mlx_destroy_window(init_map->mlx, init_map->win);
