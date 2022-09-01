@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:02:35 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/31 19:39:25 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/01 15:57:54 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,28 @@
 
 void	key_hook(int keycode, t_elem *init_map)
 {
+	init_map->t_images.moves += 1;
 	if (keycode == 13)
 		go_up(init_map);
 	if (keycode == 0)
+	{
 		go_left(init_map);
+		move_enemy_l(init_map);
+	}
 	if (keycode == 1)
 		go_down(init_map);
 	if (keycode == 2)
+	{
 		go_right(init_map);
+		move_enemy_r(init_map);
+	}
 	if (keycode == 53)
 	{
 		mlx_destroy_window(init_map->mlx, init_map->win);
 		printf("WTF! You quit this fucking amazing game!?!");
 		exit (1);
 	}
+//	create_window(init_map);
 }
 //might need to keep count of the moves here to reuse it to the moves on
 //screen

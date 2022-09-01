@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:21:28 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/31 16:47:16 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/01 15:36:16 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,10 @@ void	move_player_down(t_elem *init_map, size_t i, int ii);
 void	go_right(t_elem *init_map);
 void	move_player_right(t_elem *init_map, size_t i, int ii);
 void	put_image_all(t_elem *init_map, int index, size_t j);
+char	*moves_to_screen(t_elem *init_map);
+void	move_enemy_r(t_elem *init_map);
+void	move_enemy_right(t_elem *init_map, int i, int ii);
+void	move_enemy_l(t_elem *init_map);
+void	move_enemy_left(t_elem *init_map, int i, int ii);
 
 #endif

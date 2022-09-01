@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 16:36:30 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/31 16:37:36 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/01 15:49:36 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ void	move_player_up(t_elem *init_map, size_t i, int ii)
 		end_game(init_map);
 	init_map->map[i - 1][ii] = 'P';
 	init_map->map[i][ii] = '0';
-	create_window(init_map);
-	printf("%d MOVES\n", init_map->t_images.moves += 1);
+	//printf("%d MOVES\n", init_map->t_images.moves += 1);
 }
 
 void	move_player_left(t_elem *init_map, size_t i, int ii)
@@ -32,8 +31,8 @@ void	move_player_left(t_elem *init_map, size_t i, int ii)
 		end_game(init_map);
 	init_map->map[i][ii - 1] = 'P';
 	init_map->map[i][ii] = '0';
-	create_window(init_map);
-	printf("%d MOVES\n", init_map->t_images.moves += 1);
+//	create_window(init_map);
+	//printf("%d MOVES\n", init_map->t_images.moves += 1);
 }
 
 void	move_player_down(t_elem *init_map, size_t i, int ii)
@@ -44,8 +43,8 @@ void	move_player_down(t_elem *init_map, size_t i, int ii)
 		end_game(init_map);
 	init_map->map[i + 1][ii] = 'P';
 	init_map->map[i][ii] = '0';
-	create_window(init_map);
-	printf("%d MOVES\n", init_map->t_images.moves += 1);
+//	create_window(init_map);
+	//printf("%d MOVES\n", init_map->t_images.moves += 1);
 }
 
 void	move_player_right(t_elem *init_map, size_t i, int ii)
@@ -56,8 +55,8 @@ void	move_player_right(t_elem *init_map, size_t i, int ii)
 		end_game(init_map);
 	init_map->map[i][ii + 1] = 'P';
 	init_map->map[i][ii] = '0';
-	create_window(init_map);
-	printf("%d MOVES\n", init_map->t_images.moves += 1);
+//	create_window(init_map);
+	//printf("%d MOVES\n", init_map->t_images.moves += 1);
 }
 
 void	end_game(t_elem *init_map)

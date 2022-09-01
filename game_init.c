@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 09:21:30 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/31 16:41:48 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/01 13:58:37 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,11 @@ void	create_window(t_elem *init_map)
 {
 	int		index;
 	size_t	j;
+	char	*nb_of_moves;
 
 	index = 0;
 	init_map->col = 0;
+	nb_of_moves = moves_to_screen(init_map);
 	while (index < init_map->x)
 	{
 		j = 0;
@@ -92,6 +94,8 @@ void	create_window(t_elem *init_map)
 		while (j < ft_strlen(init_map->map[0]) - 1)
 		{
 			put_image_all(init_map, index, j);
+			mlx_string_put(init_map->mlx, init_map->win, 64, 20, 0x000000,
+				nb_of_moves);
 			j++;
 			init_map->row += 64;
 		}

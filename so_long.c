@@ -6,11 +6,22 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:06:01 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/31 19:48:54 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/01 14:04:02 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+char	*moves_to_screen(t_elem *init_map)
+{
+	char	*nb_of_moves;
+	char	*str;
+
+	str = ft_itoa(init_map->t_images.moves);
+	nb_of_moves = ft_strjoin("Moves: ", str);
+	free (str);
+	return (nb_of_moves);
+}
 
 void	init_mlx(t_elem *init_map)
 {
@@ -41,6 +52,7 @@ int	main(int ac, char **av)
 		exit (0);
 	move_map_to_tab(init_map);
 	check_all_map(init_map);
+	init_map->t_images.moves = 0;
 	init_mlx(init_map);
 	return (0);
 }
