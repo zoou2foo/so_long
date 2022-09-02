@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:06:01 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/02 14:36:55 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/02 15:04:23 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,16 @@ void	free_dbl_ptr(char **ptr)
 {
 	int	i;
 
-	i = 0;
-	while (ptr[i])
+	if (ptr)
 	{
-		free (ptr[i]);
-		i++;
+		i = 0;
+		while (ptr[i])
+		{
+			free (ptr[i]);
+			i++;
+		}
+		free (ptr);
 	}
-	free (ptr);
 }
 
 void	ft_no_collect(t_elem *init_map)

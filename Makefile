@@ -6,7 +6,7 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 09:33:47 by vjean             #+#    #+#              #
-#    Updated: 2022/09/02 13:22:47 by vjean            ###   ########.fr        #
+#    Updated: 2022/09/02 14:44:17 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CC = gcc #le compilateur à utiliser
 
 CFLAGS = -g -Wall -Wextra -Werror
 
-MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
+MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 #-Lmlx/minilibx_opengl_20191021/ -lmlx -framework OpenGL -framework AppKit
 #at home^
 .c.o:

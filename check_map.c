@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:31:50 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/02 14:37:26 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/02 14:54:46 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	check_format(t_elem *init_map)
 		if (j != first_line)
 		{
 			printf("Error:\n map is not a rectangle or a square");
-			return (0);
+			exit (0);
 		}
 		i++;
 	}
@@ -72,7 +72,7 @@ int	validation_top_and_bottom(t_elem *init_map)
 		if (init_map->map[0][i] != '1')
 		{
 			printf("Error:\n map invalid (top)\n");
-			return (0);
+			exit (0);
 		}
 		i++;
 	}
@@ -82,7 +82,7 @@ int	validation_top_and_bottom(t_elem *init_map)
 		if (init_map->map[init_map->x - 1][i] != '1')
 		{
 			printf("Error:\n map invalid (bottom)\n");
-			return (0);
+			exit (0);
 		}
 		i++;
 	}
@@ -100,7 +100,7 @@ int	validation_right_and_left(t_elem *init_map)
 		if (init_map->map[j][0] != '1')
 		{
 			printf("Error:\n map invalid (left)\n");
-			return (0);
+			exit (0);
 		}
 		j++;
 	}
@@ -111,7 +111,7 @@ int	validation_right_and_left(t_elem *init_map)
 		if (init_map->map[j][first_line] != '1')
 		{
 			printf("Error:\n map invalid wall(right)\n");
-			return (0);
+			exit (0);
 		}
 		j++;
 	}
