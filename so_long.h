@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:21:28 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/01 15:36:16 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/02 14:37:57 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 # include "mlx/minilibx_opengl_20191021/mlx.h"
 
 typedef struct s_mlx
@@ -49,10 +48,6 @@ typedef struct s_elem
 	struct s_mlx	t_images;
 }	t_elem;
 
-/*
-
-*/
-
 int		check_map(char *arg, int ac);
 void	size_map(t_elem *init_map);
 int		move_map_to_tab(t_elem *init_map);
@@ -70,7 +65,7 @@ void	ft_put_image(int index, size_t j, t_elem *init_map);
 void	ft_put_image_two(int index, size_t j, t_elem *init_map);
 void	check_player(t_elem *init_map);
 void	check_exit(t_elem *init_map);
-int		ft_exit(void);
+int		ft_exit(t_elem *init_map);
 void	key_moves(int keycode, t_elem *init_map);
 void	go_up(t_elem *init_map);
 void	move_player_up(t_elem *init_map, size_t i, int ii);
@@ -84,9 +79,7 @@ void	go_right(t_elem *init_map);
 void	move_player_right(t_elem *init_map, size_t i, int ii);
 void	put_image_all(t_elem *init_map, int index, size_t j);
 char	*moves_to_screen(t_elem *init_map);
-void	move_enemy_r(t_elem *init_map);
-void	move_enemy_right(t_elem *init_map, int i, int ii);
-void	move_enemy_l(t_elem *init_map);
-void	move_enemy_left(t_elem *init_map, int i, int ii);
+void	free_dbl_ptr(char **ptr);
+void	ft_no_collect(t_elem *init_map);
 
 #endif

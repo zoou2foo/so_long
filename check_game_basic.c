@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:02:35 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/01 15:57:54 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/02 14:13:23 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,24 @@ void	key_hook(int keycode, t_elem *init_map)
 	if (keycode == 13)
 		go_up(init_map);
 	if (keycode == 0)
-	{
 		go_left(init_map);
-		move_enemy_l(init_map);
-	}
 	if (keycode == 1)
 		go_down(init_map);
 	if (keycode == 2)
-	{
 		go_right(init_map);
-		move_enemy_r(init_map);
-	}
 	if (keycode == 53)
 	{
 		mlx_destroy_window(init_map->mlx, init_map->win);
 		printf("WTF! You quit this fucking amazing game!?!");
+		free_dbl_ptr(init_map->map);
 		exit (1);
 	}
-//	create_window(init_map);
 }
-//might need to keep count of the moves here to reuse it to the moves on
-//screen
 
-int	ft_exit(void)
+int	ft_exit(t_elem *init_map)
 {
 	printf("Exit game: you close the window");
+	free_dbl_ptr(init_map->map);
 	exit (0);
 }
 
@@ -75,6 +68,7 @@ void	check_player(t_elem *init_map)
 	if (init_map->penguin > 1 || init_map->penguin == 0)
 	{
 		printf("Error:\nIt has to be ONE player ONLY! Boo hoo");
+		free_dbl_ptr(init_map->map);
 		exit (0);
 	}
 }
@@ -102,6 +96,7 @@ void	check_exit(t_elem *init_map)
 	if (init_map->door > 1 || init_map->door == 0)
 	{
 		printf("Error:\nThere must be ONE exit only");
+		free_dbl_ptr(init_map->map);
 		exit (0);
 	}
 }

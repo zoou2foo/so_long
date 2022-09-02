@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:06:01 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/01 14:04:02 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/02 14:36:55 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,46 @@ void	init_mlx(t_elem *init_map)
 	mlx_hook(init_map->win, 17, 0, ft_exit, init_map);
 	mlx_loop(init_map->mlx);
 }
-//new_window pour la size de la win row * 64 et column * 64
+
 int	main(int ac, char **av)
 {
-	t_elem	*init_map;
+	t_elem	init_map;
 
-	init_map = malloc(sizeof(t_elem));
 	check_map(av[1], ac);
-	init_map->fd = open(av[1], O_RDONLY);
-	if (init_map->fd < 0)
+	init_map.fd = open(av[1], O_RDONLY);
+	if (init_map.fd < 0)
 		exit (0);
-	size_map(init_map);
-	close(init_map->fd);
-	init_map->fd = open(av[1], O_RDONLY);
-	if (init_map->fd < 0)
+	size_map(&init_map);
+	close(init_map.fd);
+	init_map.fd = open(av[1], O_RDONLY);
+	if (init_map.fd < 0)
 		exit (0);
-	move_map_to_tab(init_map);
-	check_all_map(init_map);
-	init_map->t_images.moves = 0;
-	init_mlx(init_map);
+	move_map_to_tab(&init_map);
+	check_all_map(&init_map);
+	init_map.t_images.moves = 0;
+	init_mlx(&init_map);
 	return (0);
 }
-//is possible to move 'check_map' and 'size_map' en dehors du 'main' et call
-//une autre fonction
+
+void	free_dbl_ptr(char **ptr)
+{
+	int	i;
+
+	i = 0;
+	while (ptr[i])
+	{
+		free (ptr[i]);
+		i++;
+	}
+	free (ptr);
+}
+
+void	ft_no_collect(t_elem *init_map)
+{
+	if (init_map->fish == 0)
+	{
+		printf("Error:\n no collectible");
+		free_dbl_ptr(init_map->map);
+		exit (0);
+	}
+}

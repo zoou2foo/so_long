@@ -6,14 +6,14 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 09:33:47 by vjean             #+#    #+#              #
-#    Updated: 2022/09/01 14:50:29 by vjean            ###   ########.fr        #
+#    Updated: 2022/09/02 13:22:47 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRCS = error_check_basic.c check_map.c check_game_basic.c so_long.c game_init.c\
-	call_moves.c do_moves.c moves_enemy.c \
+	call_moves.c do_moves.c \
 # nom des fichiers sources
 
 LIBFT = libft/libft.a
@@ -28,7 +28,7 @@ MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit
 #-Lmlx/minilibx_opengl_20191021/ -lmlx -framework OpenGL -framework AppKit
 #at home^
 .c.o:
-	$(CC)$(CFLAGS) -Imlx -c $< -o $(<:.c=.o)
+	@$(CC)$(CFLAGS) -Imlx -c $< -o $(<:.c=.o)
 
 #AR = ar rcs
 
@@ -40,7 +40,8 @@ all: $(NAME)
 
 $(NAME): $(OBJS) 
 	cd libft && make
-	$(CC) $(OBJS) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
+	@$(CC) $(OBJS) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
+
 
 clean:
 	$(RM) $(OBJS)

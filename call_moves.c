@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:11:21 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/01 14:58:18 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/02 14:37:43 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	go_left(t_elem *init_map)
 
 //int result pour ne pas descendre d'un coup, car le break me sortait seulement
 //du 2e while(le break était là, du if).
+
 void	go_down(t_elem *init_map)
 {
 	int	i;
@@ -124,5 +125,6 @@ void	end_game_winner(t_elem *init_map)
 {
 	printf("Winner! Gagnant!");
 	mlx_destroy_window(init_map->mlx, init_map->win);
+	free_dbl_ptr(init_map->map);
 	exit (0);
 }

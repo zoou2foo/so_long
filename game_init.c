@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 09:21:30 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/01 13:58:37 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/02 14:24:54 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ void	create_window(t_elem *init_map)
 		init_map->col += 64;
 		index++;
 	}
+	free (nb_of_moves);
 }
-//peut-être changer pour create_window ^
 
 void	put_image_all(t_elem *init_map, int index, size_t j)
 {
