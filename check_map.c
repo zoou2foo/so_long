@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:31:50 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/02 14:54:46 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/04 10:08:19 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,9 @@ int	validation_right_and_left(t_elem *init_map)
 	}
 	return (1);
 }
+
+//prob in validation of the right wall.. ^
+//All good now! I was missing () to what I was sending to strlen
 
 void	check_all_map(t_elem *init_map)
 {

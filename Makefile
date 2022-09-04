@@ -6,7 +6,7 @@
 #    By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/08 09:33:47 by vjean             #+#    #+#              #
-#    Updated: 2022/09/02 14:44:17 by vjean            ###   ########.fr        #
+#    Updated: 2022/09/04 10:03:29 by vjean            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ CFLAGS = -g -Wall -Wextra -Werror
 MLX_FLAGS = -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
 #-Lmlx/minilibx_opengl_20191021/ -lmlx -framework OpenGL -framework AppKit
 #at home^
+
+
 .c.o:
 	@$(CC)$(CFLAGS) -Imlx -c $< -o $(<:.c=.o)
 

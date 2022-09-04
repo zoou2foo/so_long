@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 08:31:32 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/02 14:38:43 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/04 10:08:02 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,3 @@ int	move_map_to_tab(t_elem *init_map)
 	}
 	return (1);
 }
-//prob in validation of the right wall.. ^
-//All good now! I was missing () to what I was sending to strlen

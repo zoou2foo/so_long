@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:21:28 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/02 14:44:57 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/04 10:00:44 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <mlx.h>
+//# include "minilibx_opengl_20191021/mlx.h"
 
 typedef struct s_mlx
 {
