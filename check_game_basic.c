@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:02:35 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/02 14:13:23 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/06 11:14:13 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	key_hook(int keycode, t_elem *init_map)
 {
-	init_map->t_images.moves += 1;
 	if (keycode == 13)
 		go_up(init_map);
 	if (keycode == 0)

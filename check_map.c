@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:31:50 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/04 10:08:19 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/06 08:34:12 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,11 @@ int	validation_right_and_left(t_elem *init_map)
 		}
 		j++;
 	}
-	j = 0;
-	first_line = ft_strlen((init_map->map[init_map->x - 1]) - 2);
-	while (j < init_map->x)
+	j = 1;
+	first_line = ft_strlen((init_map->map[0]));
+	while (j < init_map->x - 1)
 	{
-		if (init_map->map[j][first_line] != '1')
+		if (init_map->map[j][first_line - 2] != '1')
 		{
 			printf("Error:\n map invalid wall(right)\n");
 			exit (0);

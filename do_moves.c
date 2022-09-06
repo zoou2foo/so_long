@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 16:36:30 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/02 14:19:06 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/06 11:14:50 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	move_player_up(t_elem *init_map, size_t i, int ii)
 		end_game(init_map);
 	init_map->map[i - 1][ii] = 'P';
 	init_map->map[i][ii] = '0';
+	init_map->t_images.moves++;
 	create_window(init_map);
 }
 
@@ -31,6 +32,7 @@ void	move_player_left(t_elem *init_map, size_t i, int ii)
 		end_game(init_map);
 	init_map->map[i][ii - 1] = 'P';
 	init_map->map[i][ii] = '0';
+	init_map->t_images.moves++;
 	create_window(init_map);
 }
 
@@ -42,6 +44,7 @@ void	move_player_down(t_elem *init_map, size_t i, int ii)
 		end_game(init_map);
 	init_map->map[i + 1][ii] = 'P';
 	init_map->map[i][ii] = '0';
+	init_map->t_images.moves++;
 	create_window(init_map);
 }
 
@@ -53,6 +56,7 @@ void	move_player_right(t_elem *init_map, size_t i, int ii)
 		end_game(init_map);
 	init_map->map[i][ii + 1] = 'P';
 	init_map->map[i][ii] = '0';
+	init_map->t_images.moves++;
 	create_window(init_map);
 }
 
