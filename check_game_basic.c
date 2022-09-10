@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 15:02:35 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/02 14:13:23 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/09 22:06:58 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	key_hook(int keycode, t_elem *init_map)
 int	ft_exit(t_elem *init_map)
 {
 	printf("Exit game: you close the window");
-	free_dbl_ptr(init_map->map);
+	free(init_map->map);
 	exit (0);
 }
 
