@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:31:50 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/10 20:02:54 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/11 17:54:26 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ int	validation_right_and_left(t_elem *init_map)
 
 void	check_all_map(t_elem *init_map)
 {
+	backslash_n_map(init_map)
 	validation_top_and_bottom(init_map);
 	validation_right_and_left(init_map);
 	check_sets_map(init_map);

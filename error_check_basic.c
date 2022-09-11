@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 08:31:32 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/10 20:03:46 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/11 17:53:50 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,18 @@ void	size_map(t_elem *init_map)
 		free (str);
 		init_map->x++;
 		str = get_next_line(init_map->fd);
+	}
+}
+
+void	backslash_n_map(t_elem *init_map)
+{
+	int	len;
+	
+	len = ft_strlen(init_map->map[0]);
+	if (len < 5)
+	{
+		printf("Error:\n map invalid (empty)\n");
+		exit (0);
 	}
 }
 

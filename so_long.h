@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:21:28 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/09 21:16:10 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/11 17:54:05 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,6 @@ void	put_image_all(t_elem *init_map, int index, size_t j);
 char	*moves_to_screen(t_elem *init_map);
 void	free_dbl_ptr(char **ptr);
 void	ft_no_collect(t_elem *init_map);
+void	backslash_n_map(t_elem *init_map);
 
 #endif

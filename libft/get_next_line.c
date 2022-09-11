@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 08:27:57 by vjean             #+#    #+#             */
-/*   Updated: 2022/08/17 13:35:48 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/11 17:38:31 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*ft_copy_n_join(char *stash, char *buffer)
 		return (gnl_strdup(buffer));
 	else
 		temp = gnl_strjoin(stash, buffer);
-	free (stash);
+//	free (stash);
 	return (temp);
 }
 
