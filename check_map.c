@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:31:50 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/11 17:54:26 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/11 18:11:52 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	check_sets_map(t_elem *init_map)
 
 //parce que l'ordi ne scanne pas de haut en bas (pour le 2e while ^)
 
-int	check_format(t_elem *init_map)
+void	check_format(t_elem *init_map)
 {
 	int	i;
 	int	j;
@@ -59,10 +59,9 @@ int	check_format(t_elem *init_map)
 		}
 		i++;
 	}
-	return (1);
 }
 
-int	validation_top_and_bottom(t_elem *init_map)
+void	validation_top_and_bottom(t_elem *init_map)
 {
 	size_t	i;
 
@@ -86,10 +85,9 @@ int	validation_top_and_bottom(t_elem *init_map)
 		}
 		i++;
 	}
-	return (1);
 }
 
-int	validation_right_and_left(t_elem *init_map)
+void	validation_right_and_left(t_elem *init_map)
 {
 	int		j;
 	int		first_line;
@@ -115,7 +113,6 @@ int	validation_right_and_left(t_elem *init_map)
 		}
 		j++;
 	}
-	return (1);
 }
 
 //prob in validation of the right wall.. ^
@@ -123,7 +120,7 @@ int	validation_right_and_left(t_elem *init_map)
 
 void	check_all_map(t_elem *init_map)
 {
-	backslash_n_map(init_map)
+	backslash_n_map(init_map);
 	validation_top_and_bottom(init_map);
 	validation_right_and_left(init_map);
 	check_sets_map(init_map);

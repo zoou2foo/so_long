@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 08:31:32 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/11 17:53:50 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/11 18:09:34 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	check_map(char *arg, int ac)
 	if (ft_strncmp(&arg[ext], ".ber", 4) != 0)
 	{	
 		printf("Error:\n the argument must be a .ber extension");
-		return (0);
+		exit (0);
 	}
 	return (1);
 }
@@ -64,7 +64,7 @@ int	move_map_to_tab(t_elem *init_map)
 	if (init_map->map[init_map->x] == NULL)
 	{
 		printf("Error:\ninvalid map");
-		exit ;
+		exit (0);
 	}
 	while (1)
 	{
