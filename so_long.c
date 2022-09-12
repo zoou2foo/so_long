@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 16:06:01 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/09 22:08:32 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/12 14:19:15 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	main(int ac, char **av)
 	if (init_map.fd < 0)
 		exit (0);
 	move_map_to_tab(&init_map);
+	close(init_map.fd);
 	check_all_map(&init_map);
 	init_map.t_images.moves = 0;
 	init_mlx(&init_map);

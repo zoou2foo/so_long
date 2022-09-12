@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 08:31:32 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/12 13:11:15 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/12 14:17:10 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	backslash_n_map(t_elem *init_map)
 	int	len;
 
 	len = ft_strlen(init_map->map[0]);
-	if (len < 5)
+	if (len < init_map->x)
 	{
 		printf("Error:\n map invalid (empty)\n");
 		free_all_map(init_map);

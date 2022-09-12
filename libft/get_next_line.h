@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 08:21:18 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/12 12:52:06 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/12 14:02:35 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 500
 # endif
 
 char	*get_next_line(int fd);
