@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 17:31:50 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/11 18:11:52 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/12 12:20:38 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void	check_sets_map(t_elem *init_map)
 			if (ft_strchr("01PECN", init_map->map[i][j]) == NULL)
 			{
 				printf("Error:\n unknown elements on the map");
-				free_dbl_ptr(init_map->map);
+				//free_dbl_ptr(init_map->map);
+				free_all_map(init_map);
 				exit (0);
 			}
 			if (init_map->map[i][j] == 'C')
@@ -55,6 +56,7 @@ void	check_format(t_elem *init_map)
 		if (j != first_line)
 		{
 			printf("Error:\n map is not a rectangle or a square");
+			free_all_map(init_map);
 			exit (0);
 		}
 		i++;
@@ -71,6 +73,7 @@ void	validation_top_and_bottom(t_elem *init_map)
 		if (init_map->map[0][i] != '1')
 		{
 			printf("Error:\n map invalid (top)\n");
+			free_all_map(init_map);
 			exit (0);
 		}
 		i++;
@@ -81,6 +84,7 @@ void	validation_top_and_bottom(t_elem *init_map)
 		if (init_map->map[init_map->x - 1][i] != '1')
 		{
 			printf("Error:\n map invalid (bottom)\n");
+			free_all_map(init_map);
 			exit (0);
 		}
 		i++;
@@ -98,6 +102,7 @@ void	validation_right_and_left(t_elem *init_map)
 		if (init_map->map[j][0] != '1')
 		{
 			printf("Error:\n map invalid (left)\n");
+			free_all_map(init_map);
 			exit (0);
 		}
 		j++;
@@ -109,6 +114,7 @@ void	validation_right_and_left(t_elem *init_map)
 		if (init_map->map[j][first_line - 2] != '1')
 		{
 			printf("Error:\n map invalid wall(right)\n");
+			free_all_map(init_map);
 			exit (0);
 		}
 		j++;

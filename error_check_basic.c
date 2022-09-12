@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 08:31:32 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/11 18:09:34 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/12 13:11:15 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,25 +38,27 @@ void	size_map(t_elem *init_map)
 	str = get_next_line(init_map->fd);
 	while (str != NULL)
 	{	
-		free (str);
 		init_map->x++;
+		free (str);
 		str = get_next_line(init_map->fd);
 	}
+	free (str);
 }
 
 void	backslash_n_map(t_elem *init_map)
 {
 	int	len;
-	
+
 	len = ft_strlen(init_map->map[0]);
 	if (len < 5)
 	{
 		printf("Error:\n map invalid (empty)\n");
+		free_all_map(init_map);
 		exit (0);
 	}
 }
 
-int	move_map_to_tab(t_elem *init_map)
+void	move_map_to_tab(t_elem *init_map)
 {
 	init_map->map = malloc(sizeof(char *) * init_map->x + 1);
 	init_map->x = 0;
@@ -64,6 +66,7 @@ int	move_map_to_tab(t_elem *init_map)
 	if (init_map->map[init_map->x] == NULL)
 	{
 		printf("Error:\ninvalid map");
+		free (init_map->map);
 		exit (0);
 	}
 	while (1)
@@ -75,5 +78,16 @@ int	move_map_to_tab(t_elem *init_map)
 			break ;
 		}
 	}
-	return (1);
+}
+
+void	free_all_map(t_elem *init_map)
+{
+	int	i;
+
+	i = 0;
+	while (i < init_map->x)
+	{
+		free (init_map->map[i]);
+		i++;
+	}
 }

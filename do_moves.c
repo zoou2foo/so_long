@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 16:36:30 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/10 20:03:21 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/12 12:21:59 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	end_game(t_elem *init_map)
 {
 	printf("You've been killed by a baby shark! Doo doo doo doo");
 	mlx_destroy_window(init_map->mlx, init_map->win);
-	free_dbl_ptr(init_map->map);
+	//free_dbl_ptr(init_map->map);
+	free_all_map(init_map);
 	exit (0);
 }

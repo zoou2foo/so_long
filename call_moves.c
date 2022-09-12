@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 11:11:21 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/09 22:06:27 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/12 12:21:03 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ void	end_game_winner(t_elem *init_map)
 {
 	printf("Winner! Gagnant!");
 	mlx_destroy_window(init_map->mlx, init_map->win);
-	free_dbl_ptr(init_map->map);
+	//free_dbl_ptr(init_map->map);
+	free_all_map(init_map);
 	exit (0);
 }

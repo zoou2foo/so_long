@@ -6,7 +6,7 @@
 /*   By: vjean <vjean@student.42quebec.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 13:21:28 by vjean             #+#    #+#             */
-/*   Updated: 2022/09/11 18:11:43 by vjean            ###   ########.fr       */
+/*   Updated: 2022/09/12 13:10:29 by vjean            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "minilibx_opengl_20191021/mlx.h"
-//# include <mlx.h>
+# include <mlx.h>
+//# include "minilibx_opengl_20191021/mlx.h"
 
 typedef struct s_mlx
 {
@@ -51,7 +51,7 @@ typedef struct s_elem
 
 int		check_map(char *arg, int ac);
 void	size_map(t_elem *init_map);
-int		move_map_to_tab(t_elem *init_map);
+void	move_map_to_tab(t_elem *init_map);
 void	validation_top_and_bottom(t_elem *init_map);
 void	validation_right_and_left(t_elem *init_map);
 void	check_sets_map(t_elem *init_map);
@@ -83,5 +83,6 @@ char	*moves_to_screen(t_elem *init_map);
 void	free_dbl_ptr(char **ptr);
 void	ft_no_collect(t_elem *init_map);
 void	backslash_n_map(t_elem *init_map);
+void	free_all_map(t_elem *init_map);
 
 #endif
